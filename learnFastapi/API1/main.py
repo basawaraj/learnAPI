@@ -23,4 +23,4 @@ class loginRequest(BaseModel):
     password:int
 @app.post("/login")
 def login(data:loginRequest):
-    return f"{data.username} logged in successfully"
+    return f"{data.username} logged in successfullyyy"
