@@ -1,4 +1,4 @@
-def loginUser(username:str,password:str):
-    if username=="admin" and password=="abcd1234":
-        return f"welcome {username}"
-    return "invalid creds"
+def login_user(username: str, password: str):
+    if username == "admin" and password == "123":
+        return {"message": "Login success"}
+    return {"error": "Invalid credentials"}
