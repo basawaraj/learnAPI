@@ -12,3 +12,13 @@ def create_access_token (data:dict):
 
     token_jwt=jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return token_jwt
+
+def    verify_access_token(token:str):
+    try:
+        payload=jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username=payload.get("sub")
+        if username is None:
+            raise JWTError
+        return username
+    except JWTError:
+        return None
