@@ -20,3 +20,9 @@ def create_student(db, student):
     db.refresh(new_student)
 
     return new_student
+
+def get_all_students(db):
+    return db.query(Student).all()
+
+def get_student_by_id(db, student_id):
+    return db.query(Student).filter(Student.id == student_id).first()
