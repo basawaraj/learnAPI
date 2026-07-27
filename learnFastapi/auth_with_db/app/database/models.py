@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
-from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
@@ -14,4 +14,4 @@ class User(Base):
     created_at = Column(DateTime(timezone=True), default=datetime.now(timezone.utc))
     updated_at = Column(DateTime(timezone=True), default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc))
 
-    posts = relationship("Post", back_populates="owner")
+   
