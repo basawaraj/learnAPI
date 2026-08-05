@@ -19,3 +19,6 @@ def register(user: RegisterRequest, db: Session=Depends(get_db)):
 def login(user: LoginRequest, db: Session=Depends(get_db)):
     result = login_user(db, user)
     return result
+@router.get("/me")
+def get_current_user(current_user: User = Depends(get_current_user)):
+    return current_user
